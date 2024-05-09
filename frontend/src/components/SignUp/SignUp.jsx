@@ -13,35 +13,32 @@ const SignUp = () => {
         await signup({ fullname, email, password })
     }
     return (
-        <>
-            <form onSubmit={handleInput}>
-                <h2>SignUp</h2>
-                <div>
-                    <input type="text"
-                        placeholder='Fullname'
-                        value={fullname}
-                        onChange={(e) => setFullname(e.target.value)} />
-                </div>
-
-                <div>
-                    <input type="email"
-                        placeholder='Email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
-                </div>
-
-                <div>
-                    <input type="password"
-                        placeholder='Password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
-                </div>
-
-                <p>Already have an account ?
-                    <Link to="/api/login">Login</Link>
+        <div className='flex h-[100vh] w-full justify-center items-center '>
+            {/* Signup form  */}
+            <form onSubmit={handleInput} className='rounded-md p-5 flex flex-col items-center gap-1 w-[20vw] h-fit bg-gray-50'>
+                <h2 className='text-3xl p-4'>Sign Up</h2>
+                <input type="text" placeholder='Fullname'
+                    value={fullname}
+                    onChange={(e) => setFullname(e.target.value)}
+                    className='p-2 border-2 w-full rounded-md mt-3 outline-sky-200'
+                />
+                <input type="email" placeholder='Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className='p-2 border-2 w-full rounded-md mt-3 outline-sky-200'
+                />
+                <input type="password" placeholder='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className='p-2 border-2 w-full rounded-md mt-3 outline-sky-200'
+                />
+                <button className='bg-green-400 hover:bg-green-500 text-white p-2 w-full rounded-md mt-10'>Sign Up</button>
+                <p className='mt-7 hover:underline cursor-pointer'>
+                    <Link to='/login'>Already registered? | Login</Link>
                 </p>
             </form>
-        </>
+
+        </div>
     )
 }
 

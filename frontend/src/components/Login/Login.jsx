@@ -15,21 +15,25 @@ const Login = () => {
 
     return (
         <>
-            <div>
-                <form onSubmit={handleInput}>
-                    <h2>Login</h2>
+            <div className='flex h-[100vh] w-full justify-center items-center '>
+                <form onSubmit={handleInput} className='rounded-md p-5 flex flex-col items-center gap-1 w-[20vw] h-fit bg-gray-50'>
+                    <h2 className='text-3xl p-4'>Login</h2>
                     <input type="email" placeholder='Email'
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
+                        onChange={(e) => setEmail(e.target.value)} 
+                        className='p-2 border-2 w-full rounded-md mt-3 outline-sky-200'
+                        />
 
                     <input type="password" placeholder='password'
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
+                        onChange={(e) => setPassword(e.target.value)} 
+                        className='p-2 border-2 w-full rounded-md mt-3 outline-sky-200'
+                        />
 
-                    <button>Login</button>
-                    <p>
-                        Not registered yet?
-                        <Link to="/api/create-account">Sign Up</Link>
+                    <button className='bg-sky-400 hover:bg-sky-500 text-white p-2 w-full rounded-md mt-10'>Login</button>
+                    <p className='mt-7 hover:underline cursor-pointer'>
+                        <Link to='/signup'>Not registered yet? | Signup</Link>
+                        {/* <Link to="/api/create-account">Sign Up</Link> */}
                     </p>
 
                 </form>
